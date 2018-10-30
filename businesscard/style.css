@@ -1,0 +1,168 @@
+/* //========================
+//VARIABLES BEGIN
+//========================  */
+:root{
+--primarybackgroundc:rgb(206,242,241);
+--borderc:rgb(130,167,176);
+
+
+}
+
+
+/* //========================
+//VARIABLES END
+//========================  */
+/* //========================
+//LAYOUT BEGIN
+//========================  */
+
+/* //========================
+//DEFINING THE GRID BEGIN--------------------------------------*/
+
+.container{
+    display:grid;
+    grid-template-rows:1fr 1fr 2.3fr;
+    grid-template-areas:"uppermain1" 
+                        "uppermain2" 
+                        "lowermain1";
+    border-radius:25px; 
+    background: var(--primarybackgroundc);
+    border: 3px solid var(--borderc);
+    box-sizing:border-box;
+    margin:auto;
+    max-width:40%;
+    padding:7px;
+}
+
+.main_sections{
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+}
+/* DEFINING THE GRID END
+//========================--------------------------------------*/
+
+
+/* //========================
+//UPPER MAIN1 BEGIN--------------------------------------*/
+#uppermain1{
+    grid-area:uppermain1;
+    display:grid;
+    grid-template-rows:1fr, 4fr ;
+    grid-template-columns:60%,40%;
+    grid-template-areas:"uppermain1_namelabel uppermain1_idnumber" 
+                        "uppermain1_nametext uppermain1_idnumber"; 
+    background-color: red;
+    border-bottom: 1px solid var(--borderc);
+
+
+}
+
+
+#uppermain1_namelabel{
+    grid-area:uppermain1_namelabel;
+}
+
+#uppermain1_nametext{
+    grid-area:uppermain1_nametext;
+}
+
+#uppermain1_idnumber{
+    grid-area:uppermain1_idnumber;
+    display:flex;
+    justify-content:flex-end;
+    font-size:40px;    
+}
+/* UPPER MAIN1 END
+//========================--------------------------------------*/
+/* //========================
+//UPPER MAIN2 BEGIN--------------------------------------*/
+
+#uppermain2{
+    grid-area:uppermain2;
+    display:grid;
+    grid-template-rows:1fr, 3fr ;
+    grid-template-areas:"uppermain2_emaillabel"
+                        "uppermain2_email"; 
+    background-color: blue;
+
+}
+
+#uppermain2_emaillabel{
+    grid-area:uppermain2_emaillabel;
+}
+
+#uppermain2_email{
+    grid-area:uppermain2_email;
+}
+
+
+
+/* UPPER MAIN2 END
+//========================--------------------------------------*/
+/* //========================
+//LOWER MAIN1 BEGIN--------------------------------------*/
+#lowermain1{
+    grid-area:lowermain1;
+    display:grid;
+    grid: template columns 3fr, 1fr;
+    grid-template-areas:"lowermainsub1" "lowermain1_photo" ;
+
+}
+/* LOWER MAIN SUB 1 BEGINS------
+*/
+#lowermainsub1{
+    grid-area:lowermainsub1;
+    display:grid;
+    grid-template-columns:1fr, 1fr;
+    grid-template-rows:1fr, 1fr, 1fr, 1fr, 1fr;
+    grid-template-areas:"lowermainsub1_url lowermainsub1_url " 
+        "lowermainsub1_officeno lowermainsub1_officeno"
+        "lowermainsub1_faxno lowermainsub1_faxno"
+        "lowermainsub1_weight lowermainsub1_height"
+        "lowermainsub1_country lowermainsub1_rank"
+    ;
+}
+
+#lowermainsub1_url{
+    grid-area:lowermainsub1_url;
+}
+
+#lowermainsub1_officeno{
+    grid-area:lowermainsub1_officeno;
+}
+
+#lowermainsub1_faxno{
+    grid-area:lowermainsub1_faxno;
+}
+
+#lowermainsub1_weight{
+    grid-area:lowermainsub1_weight;
+}
+
+#lowermainsub1_height{
+    grid-area:lowermainsub1_height;
+}
+
+#lowermainsub1_country{
+    grid-area:lowermainsub1_country;
+}
+
+#lowermainsub1_rank{
+    grid-area:lowermainsub1_rank;
+}
+
+/* LOWER MAIN SUB 1 ENDS--------
+*/
+
+#lowermain1_photo{
+    grid-area:lowermain1_photo;
+}
+
+
+/* LOWER MAIN1 END
+//========================--------------------------------------*/
+
+/* //========================
+//LAYOUT END
+//========================  */
