@@ -6,9 +6,99 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+/* //========================
+//VARIABLES BEGIN
+//========================  */
+:root{
+    --lightgreen:#7ed56f;
+    --mediumgreen:#55c57a;
+    --darkgreen:#28b485;
+ 
+    }    
+/* //========================
+//VARIABLES END
+//========================  */    
+*{
+    font-size: 16px;
 
 
 
+
+}
+/* //========================
+//LANDING PAGE BEGIN
+//========================  */
+#landing_header{
+    margin:1em;
+    background-image: linear-gradient(rgba(85, 197, 122, 0.7), rgba(40, 180, 133, 0.7)),url('../img/hero.jpg');
+    font-weight:bold;
+    font-family:Verdana, sans-serif;
+    text-transform: uppercase;    
+    margin:auto;
+    display:grid;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 79%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 79%, 0% 100%);
+    grid-template-rows: 30% 40% 30%;
+    grid-template-areas:"landingheadertop" 
+                        "landingheadercenter" 
+                        "landingheaderbottom";
+}
+
+
+#landingheadertop{
+grid-area:landingheadertop;
+}
+#landingheadertop img{
+height:auto;
+max-width:6em;
+padding:2em;
+}
+
+#landing_menubutton{
+    background-color:white;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+
+}
+
+
+
+#landingheadercenter{
+grid-area:landingheadercenter;
+margin:auto;
+color:white;
+} 
+#lhctext1{
+font-size:3em;
+}
+#lhctext2{
+font-size:.5em;
+
+
+}
+
+
+#landingheaderbottom{
+grid-area:landingheaderbottom;
+margin:auto;
+}
+#lhbtext{
+
+}
+#lhbbutton{
+    background-color:white;
+    max-width:2em;
+    border-radius:10px;
+}
+
+
+
+
+
+    
+/* //========================
+//LANDING PAGE END
+//========================  */
 
 
 
