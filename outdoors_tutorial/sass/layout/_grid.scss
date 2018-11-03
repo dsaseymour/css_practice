@@ -1,0 +1,42 @@
+.row{
+    max-width: $grid-width;
+    background-color: #eee;
+    margin:0 auto;
+    //vertical gutter is applied to everything but the last child
+    &:not(:last-child){
+        margin-bottom: $gutter-vertical;
+    }
+    // mixin .row::after 
+    @include clearfix;
+    //instead of repeating code we use the attribute selector to apply the repeating code to all columns
+    [class^="col-"]{
+        float:left;
+        background-color: orangered;
+        &:not(:last-child){
+            //we want every column except the last to have a margin-right i.e. a gutter
+            margin-right:$gutter-horizontal;
+        }        
+    }
+    .col-1-of-2{
+        //the width of the column is the width of a row minus the gutter-vertical divided by the number of columns sharing the row space
+        //to use sass variables in css functions we have to use this #{} syntax
+        //we want a column
+        width: calc-column-width(1, 2);
+    }
+    .col-1-of-3{
+        width: calc-column-width(1, 3);
+    }
+
+    .col-2-of-3{
+        width: calc-column-width(2, 3);
+    }
+    .col-1-of-4{
+        width: calc-column-width(1, 4);
+    }  
+    .col-2-of-4{
+        width: calc-column-width(2, 4);
+    }
+    .col-3-of-4{
+        width: calc-column-width(3, 4);
+    }
+}   

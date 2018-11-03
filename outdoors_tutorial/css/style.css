@@ -13,50 +13,7 @@ now one rem is 10 px
 
 /* a font included from google*/
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
   box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative; }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation: moveInLeft 1s ease-out; }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.74rem;
-    animation: moveInRight 1s ease-out; }
 
 @keyframes moveInLeft {
   0% {
@@ -86,12 +43,37 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.74rem;
+    animation: moveInRight 1s ease-out; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
 .btn {
   /*using pseudo-classes to create an animated shadow effect for the button*/
   /*creating a pseudo element that looks just like the actual element
-        that is placed directly behind our actual element
-        after pseudo element will have the exact dimensions of parent 
-        */ }
+    that is placed directly behind our actual element
+    after pseudo element will have the exact dimensions of parent 
+    */ }
   .btn:link, .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
@@ -105,8 +87,8 @@ body {
     transform: translateY(-0.3rem);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
     /* after pseudo element when we hover the button
-                the element appears double the actual size
-                */ }
+            the element appears double the actual size
+            */ }
     .btn:hover::after {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0; }
@@ -132,3 +114,51 @@ body {
   .btn--animated {
     animation: moveInBottom .5s ease-out .75s;
     animation-fill-mode: backwards; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left;
+    background-color: orangered; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc(1 * ((100% - (2 - 1) * 6rem) / 2) + (6rem * (0))); }
+  .row .col-1-of-3 {
+    width: calc(1 * ((100% - (3 - 1) * 6rem) / 3) + (6rem * (0))); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - (3 - 1) * 6rem) / 3) + (6rem * (1))); }
+  .row .col-1-of-4 {
+    width: calc(1 * ((100% - (4 - 1) * 6rem) / 4) + (6rem * (0))); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - (4 - 1) * 6rem) / 4) + (6rem * (1))); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - (4 - 1) * 6rem) / 4) + (6rem * (2))); }
