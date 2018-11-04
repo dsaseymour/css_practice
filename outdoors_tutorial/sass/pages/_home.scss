@@ -1,0 +1,9 @@
+.section-about{
+    background-color:$color-grey-light-1;
+    padding: 25rem 0;//250px top and bottom
+    //with the unique shape of our header we have an exposed wedge total height of header is 95vh and the polygon shape goes down 75vh
+    //this is a difference of 20 so the exposed wedge to the lower right of the header has a height of 20vh
+    //we adjust accordingly to shift the about section upwards this amount
+    margin-top: -20vh;
+     
+}

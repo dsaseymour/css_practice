@@ -1,6 +1,5 @@
 .row{
     max-width: $grid-width;
-    background-color: #eee;
     margin:0 auto;
     //vertical gutter is applied to everything but the last child
     &:not(:last-child){
@@ -11,7 +10,6 @@
     //instead of repeating code we use the attribute selector to apply the repeating code to all columns
     [class^="col-"]{
         float:left;
-        background-color: orangered;
         &:not(:last-child){
             //we want every column except the last to have a margin-right i.e. a gutter
             margin-right:$gutter-horizontal;

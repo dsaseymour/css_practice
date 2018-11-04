@@ -9,7 +9,7 @@
             border-radius:10rem;
             transition:all .2s;
             position:relative;
-            font-size:1.6rem;
+            font-size:$default-font-size;
     }
 
     &:hover{
@@ -23,12 +23,10 @@
                 opacity:0;
             }
     }
-
     &:active{
             transform:translateY(-.1rem);
             box-shadow: 0 .5rem 1rem rgba($color-black,.2);
     }
-
     &--white{
             background-color:$color-white;
             color:$color-grey-dark;
@@ -36,7 +34,6 @@
                     background-color:$color-white;
             }
     }
-
     /*creating a pseudo element that looks just like the actual element
     that is placed directly behind our actual element
     after pseudo element will have the exact dimensions of parent 
@@ -53,12 +50,34 @@
             z-index:-1;
             transition: all .4s;
     }
-
-
-
-
     &--animated{
             animation: moveInBottom .5s ease-out .75s;
             animation-fill-mode: backwards;
     }
 }
+
+.btn-text{ 
+        &:link,
+        &:visited{
+                font-size:$default-font-size;
+                color: $color-primary;
+                display:inline-block;
+                text-decoration:none;
+                border-bottom: .1rem solid $color-primary;
+                padding: .3rem;
+                transition:all .2s;
+        }
+        &:hover{
+                color:$color-white;                
+                background-image: linear-gradient(to right, $color-primary--light,$color-primary--dark);
+                box-shadow:0 .3rem .2rem rgba($color-black,.2);
+                transform:translateY(-.2rem);
+        }
+        &:active{
+                color:$color-white;
+                background-image: linear-gradient(to right, $color-primary--light,$color-primary--dark);
+                box-shadow:0 .1rem .2rem rgba($color-black,.2);                
+                transform:translateY(0);
+        }
+}
+
