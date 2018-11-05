@@ -34,6 +34,16 @@
                     background-color:$color-white;
             }
     }
+
+    &--green{
+        background-color:$color-primary;
+        color:$color-white;
+        &::after{
+                background-color:$color-primary;
+        }
+}
+
+
     /*creating a pseudo element that looks just like the actual element
     that is placed directly behind our actual element
     after pseudo element will have the exact dimensions of parent 
@@ -69,15 +79,16 @@
         }
         &:hover{
                 color:$color-white;                
-                background-image: linear-gradient(to right, $color-primary--light,$color-primary--dark);
+                background-image: linear-gradient(to right, $color-primary-light,$color-primary-dark);
                 box-shadow:0 .3rem .2rem rgba($color-black,.2);
                 transform:translateY(-.2rem);
         }
         &:active{
                 color:$color-white;
-                background-image: linear-gradient(to right, $color-primary--light,$color-primary--dark);
+                background-image: linear-gradient(to right, $color-primary-light,$color-primary-dark);
                 box-shadow:0 .1rem .2rem rgba($color-black,.2);                
                 transform:translateY(0);
         }
 }
-
+ 
+   
