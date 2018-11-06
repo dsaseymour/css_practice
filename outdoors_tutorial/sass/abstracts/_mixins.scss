@@ -6,3 +6,60 @@
         clear:both;
     }
 }
+
+@mixin absCenter{
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* //========================
+//DESKTOP FIRST MEDIA QUERY MANAGER BEGIN
+//========================  */
+/*
+0 - 600PX: PHONE
+600 - 900PX: TABLET PORTRAIT
+900 - 1200PX: TABLET LANDSCAPE
+1200 - 1800PX WHERE OUR NORMAL STYLES APPLY
+1800 +: BIG DESKTOP
+*/
+/*
+We call respond and it fills in the outer details of 
+our media query i.e. it just fills out the @media (maxor min part 
+so we don't have to keep typing it in
+since sass allows nesting we can position the include statements in the elements
+and avoid retyping the selectors manually
+$breakpoint argument choices:
+-phone
+- tab-port 
+- tab-land
+- big-desktop
+
+Converting from px to rems and ems in media queries 
+1em = 16px
+600PX/16= 37.5em: PHONE
+900PX/16= 56.25em: TABLET PORTRAIT
+1200PX/16= 75em: TABLET LANDSCAPE
+1800/16=: 112.5em BIG DESKTOP
+*/
+@mixin respond($breakpoint){
+    @if $breakpoint == phone{
+        @media (max-width: 37.5em){@content};// 600px 
+    }
+
+    @if $breakpoint == tab-port{
+        @media (max-width: 56.25em){@content};// 900px
+    }
+
+    @if $breakpoint == tab-land{
+        @media (max-width: 75em){@content};// 1200px
+    }
+
+    @if $breakpoint == big-desktop{
+        @media (min-width: 112.5em){@content};//1800px
+    }
+}    
+/* //========================
+//MEDIA QUERY MANAGER END
+//========================  */
