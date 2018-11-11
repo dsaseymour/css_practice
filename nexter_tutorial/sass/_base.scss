@@ -37,13 +37,13 @@ body {
 .container{
   display:grid;
   grid-template-rows: 80vh min-content 40vw repeat(3,min-content);
-  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] 1fr [center-start] repeat(8,[col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8,[col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
   //we start with an 8 column layout 
   //we add a side bar
   // add two columns that take up the fractional space/ leftover space to the left and right side so that we can center our 8 column layout
   // when we want a layout that takes up all the columns we can still use our 1fr columns 
   //we also have line names 
-
+// we always have a margin between the content and end of the page of at least 60 pixels i.e. 6rem
 
   & > *{
     padding: 40px;
