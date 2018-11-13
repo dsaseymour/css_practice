@@ -1,0 +1,39 @@
+.features{
+  background-color: $color-grey-light-1;
+  grid-column: center-start/ center-end;
+  margin: 15rem 0;
+  display:grid;//our section.features becomes a grid container
+
+  //grid-template-columns: repeat(3, 1fr);//three equally sized columns
+    //we create a 3 by 2 grid 
+  //an implicit grid is created for our row tracks 
+
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));//create as many tracks as can fit on the width we define 
+  //the width of the tracks should stay between 25rem and 1fr
+  gap: 6rem;
+  align-items:start;
+} 
+
+.feature{
+  //creating a grid to align the icons with the feature text
+  display:grid;
+  grid-template-columns:min-content 1fr;
+  //add space between columns and rows 
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+
+
+  &__icon{
+    fill: $color-primary; //changing the color of an svg icon
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1/ span 2;
+    //can't use -1 because that only takes us to the end of the explicit grid row we have an implicit grid because we didn't define the rows
+    transform: translateY(-1rem);
+  }
+
+  &__text{
+    font-size:1.7rem;
+  }
+}
+

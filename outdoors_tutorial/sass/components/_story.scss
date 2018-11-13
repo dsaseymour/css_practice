@@ -1,0 +1,69 @@
+.story{
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    background-color:rgba($color-white,.6);
+    border-radius: .3rem;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    transform:skewX(-12deg);
+
+    &__shape{
+        width: 15rem;
+        height: 15rem;
+        float:left;
+        -webkit-shape-outside:circle(50% at 50% 50%);
+        shape-outside:circle(50% at 50% 50%);
+        -webkit-clip-path:circle(50% at 50% 50%);
+        clip-path:circle(50% at 50% 50%);
+        //add spacing between the shape .i.e. the circle, and the text 
+        transform: translateX(-3rem) skewX(12deg);
+        position:relative;
+    }
+
+    &__img{
+        height:100%;//100% of the parent which is the story shape that contains the image 
+        //this image is wider than its height so we put height 100%
+        transform:translateX(-4rem) scale(1.4); //center the image more with the figure so that the woman is in the center of the circle
+        //this is for the zooming out effect that happens when we hover
+        //to make that possible, in the initial state the img must be zoomed in i.e. scaled
+        backface-visibility:hidden;   
+        transition: all .5s;
+    }
+ 
+    &__text{
+        transform: skewX(12deg);
+    }
+
+    &__caption{
+        position:absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%, 20%);
+        color:$color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align:center;
+        opacity:0;
+        //initial state of caption is opacity 0 and 20% down on Y axis 
+        transition: all .5s; 
+        backface-visibility:hidden; //he says that there was shaking at the end of the animation by 1px but I don't see it 
+    }
+
+    &:hover &__caption{
+        //when we hover over the story change the caption opacity to 1 and move it upwards
+        opacity: 1;
+        transform: translate(-50%, -50%);
+
+
+    }
+
+    &:hover &__img {
+        transform:translateX(-4rem) scale(1); //center the image more with the figure so that the woman is in the center of the circle
+        //zooming out effect on hover 
+        filter:blur(3px) brightness(80%);
+    }
+
+
+} 
