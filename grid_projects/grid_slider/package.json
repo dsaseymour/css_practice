@@ -1,0 +1,18 @@
+{
+  "name": "grid_slider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/main.css -w",
+    "devserver": "live-server",
+    "dev": "concurrently \"npm run compile:sass\" \"npm run devserver\""
+  },
+  "author": "Danny Seymour",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.10.0"
+  }
+}

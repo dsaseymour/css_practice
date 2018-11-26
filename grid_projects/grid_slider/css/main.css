@@ -1,0 +1,4 @@
+.gridcontainer {
+  display: grid;
+  grid-template-rows: [row-start] 80vh [row-end];
+  grid-template-columns: [leftcolumn-start] 1fr [leftcolumn-ends] [content-start] 12vw [content-ends] [rightcolumn-start] 1fr [rightcolumn-ends]; }
